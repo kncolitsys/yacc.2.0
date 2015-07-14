@@ -1,0 +1,96 @@
+<style>
+	body{ font-family: Calibri, Arial, Helvetica, sans-serif;}
+	th{ text-align:left; font-weight:bold;}
+	dl{ margin-top: 0;}
+	dt{ font-weight:bold; font-style:italic;}
+	dd{ margin-bottom: 10px; margin-left: 25px;}
+</style>
+
+
+<h1>CMS Engine Installation Instructions</h1>
+<h2>Requirements</h2>
+<ul>
+	<li>ColdFusion
+    	<ul>
+        	<li>8.0 or greater</li>
+        	<li><a href="http://www.adobe.com/cfusion/tdrc/index.cfm?product=coldfusion">Download</a></li>
+		</ul>
+    </li>
+    
+    <li>Tranfer Orm
+    	<ul>
+        	<li>v1.0 or greater</li>
+        	<li><a href="http://www.transfer-orm.com/?action=transfer.download">			Download</a></li>
+		</ul>
+	</li>
+    <li>Coldspring
+    	<ul>
+        	<li>1.2 RC1 or greater</li>
+        	<li><a href="http://www.coldspringframework.org/index.cfm?objectid=2DD544DF-E8F4-83AA-E2D7FED1F1B53FAE">Download</a></li>
+		</ul>
+    </li>
+</ul>    
+<h2>Simple Install</h2>
+<ul>
+	<li>Unzip yacc zip file</li>
+	<li>Install YACC engine
+      <ul>
+        <li>Copy <em>yacc</em> folder in webroot</li>
+</ul>
+	</li>
+	<li>Setup Database and datasource
+	  <ul>
+	    <li>Find appropriate sql install file in <em>sql</em> folder</li>
+	    <li>Create datasource in ColdFusion administrator named <em>yacc</em></li>
+      </ul>
+	</li>
+<li>Edit ColdSpring Config File
+    <ul>
+      <li>Open file<em>"/yacc/config/coldspring.xml.cfm"</em></li>
+      <li>Set values according to your site's needs.</li>
+</ul>
+</li>
+<li>Install YACC site
+  <ul>
+    <li>Copy <em>yacctemplate</em> folder to webroot</li>
+    <li>Rename folder to whatever you want</li>
+    <li>Open <em>&quot;/yacctemplate/config/coldspring.xml.cfm&quot;</em></li>
+    <li>Set values according to your site's needs.</li>
+</ul>
+</li>
+<li>Navigate to your YACC site and enjoy</li>
+</ul>
+<h2>Basics</h2>
+<dl>
+	<dt>How do you login?</dt>
+    <dd>At the bottom of the default template, there is a login link. Click it. Then login:
+    	<table>
+        	<tr><th>Username: </th><td>admin</td></tr>
+            <tr><th>Password: </th><td>testpassword</td></tr>
+        </table>
+    </dd>    
+	<dt>How do you add a page?</dt>
+    <dd>Login (see above) then go to a page that doesn't exist. You'll be given the option. Alternately you can just create a page, and slap a &lt;cf_section id=&quot;yacccontent&quot; /&gt; in there.</dd>
+    <dt>What are the various pieces of the CMS?</dt>
+    <dd>
+    	<p>Here are a few definitions of the terms used throughout the documentation:</p>
+    	<dl>
+        	<dt>Page</dt>
+            <dd>A page is a page, no surprises here. Pages can contain sections and nuggets, they are modified by layouts.</dd>
+            <dt>Nugget</dt>
+            <dd>A nugget is a section of code that can appear on multiple pages.  It displays exactly the same on every page. It has an ID. There can be only one nugget with the same ID per installation of YACC. There can be only one!</dd>
+            <dt>Section</dt>
+            <dd>A section is a section of code that is unique to the page on which it appears.  It has an ID.  There can be only ID per page, but there can be multiple section on different pages with the same ID. There can be more than one!</dd>
+            <dt>ID</dt>
+            <dd>A unique identifier for the nugget on the site, or the section on the page. Sections and nuggets are surrounded by divs with an ID of their ID.</dd>
+            <dt>Layout</dt>
+            <dd>Layouts are versions of the same template.  For example you could have a two column and a three column version of the same layout, with nuggets in different spots.</dd>
+            <dt>Template</dt>
+            <dd>Template refers to the overall layout, color scheme and typography of the site. There are three templates installed by default with YACC.</dd>
+       </dl>     
+    
+    
+    </dd>
+</dl>
+
+
